@@ -1,8 +1,37 @@
 .App {
   text-align: center;
 
-  .create-todo {
-    margin: 0 auto;
+  * {
+    box-sizing: border-box;
+  }
+
+  .create-todo, .list-of-todos {
+    margin: 30px auto 0;
     width: 700px;
+  }
+
+  .list {
+    padding: 20px 0;
+  }
+
+  hr {
+    background-color: #000;
+  }
+
+  .todo {
+    &.box {
+      width: 90%;
+      margin: 25px auto;
+      padding: 1.25em;
+      padding-left: 2em;
+    }
+
+    p {
+      text-align: left;
+    }
+
+    display: grid;
+    grid-template-columns: 7fr 5fr 1fr;
+    justify-content: center;
   }
 }

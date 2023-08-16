@@ -48,6 +48,7 @@ export const FormCreateTodo: React.FC<Props> = ({ usersFromServer, todos, setTod
         );
       }}
     >
+      <h1 className="title">Create a new ToDo</h1>
       <div className="field">
         <div className="control has-icons-left has-icons-right">
           <input

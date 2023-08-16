@@ -34,7 +34,8 @@ export const handlerSubmitForm: IHandlerSubmitForm = (
   const newTodo: ITodo = {
     title: titleOfNewTodo.trim(),
     isCompleted: todoIsCompleted,
-    user: users.find(user => user.id === selectedUser) as IUser
+    user: users.find(user => user.id === selectedUser) as IUser,
+    id: todos.length + 1,
   }
 
   setTodos([...todos, newTodo]);
