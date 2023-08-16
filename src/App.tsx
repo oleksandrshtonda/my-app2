@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bulma';
+import './App.scss';
+import { useState } from 'react';
 
-function App() {
+//  API Data 
+import { usersFromServer } from './data/usersFromServer';
+
+//  Interfaces & Types
+import { ITodo } from './interfaces/ITodo';
+
+//  components
+import { FormCreateTodo } from './components/FormCreateTodo';
+
+const App: React.FC = () => {
+  const [todos, setTodos] = useState<ITodo[]>([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="search-todo"></div>
+      <div className="list-of-todos"></div>
+      <FormCreateTodo
+        usersFromServer={usersFromServer}
+        todos={todos}
+        setTodos={setTodos}
+      />
     </div>
   );
 }
